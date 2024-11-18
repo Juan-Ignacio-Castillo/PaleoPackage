@@ -4,10 +4,14 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Juan Ignacio", "Castillo", , "castillojuanignacio29@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0005-3109-645X"))
-Description: This package provides tools and methods to extract and calculate various animal measurements, including the use of using volumetric formulas to estimate an animal's weight. Designed for paleontological research, it supports analysis of extinct species and facilitates comparisons based on anatomical features. The package is particularly suited for researchers, educators, and enthusiasts in the field of paleontology.
+Description: This package provides tools and methods to extract and calculate various animal measurements, including body mass, length, speed, and other metrics derived from anatomical features. By leveraging volumetric formulas, scaling principles, and biomechanical models, the package offers robust methods for estimating physical and ecological parameters of extinct species. Designed for paleontological research, `PaleoPackage` supports the analysis of fossil data to reconstruct the biology, behavior, and ecological roles of extinct organisms. The package is particularly suited for researchers, educators, and enthusiasts in the field of paleontology, enabling comparisons across species and facilitating a deeper understanding of evolutionary and ecological trends.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: https://github.com/Juan-Ignacio-Castillo/PaleoPackage
 BugReports: https://github.com/Juan-Ignacio-Castillo/PaleoPackage/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

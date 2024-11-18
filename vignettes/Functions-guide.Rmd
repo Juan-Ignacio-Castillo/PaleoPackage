@@ -1,0 +1,55 @@
+---
+title: "Functions-guide"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Functions-guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PaleoPackage)
+```
+
+## Introduction to PaleoPackage
+
+The PaleoPackage is designed to simplify the estimation and analysis of various anatomical and ecological parameters of extinct organisms, such as body mass, length, and speed. This package provides tools to work with fossil data and offers robust methods based on volumetric scaling, biomechanical principles, and anatomical measurements.
+In this guide, we describe how to use each main function of the package, including detailed examples to help you get started with analyzing and interpreting fossil data effectively.
+
+## Getting started 
+
+Below is a quick demostration of some of the core functionalities of PaleoPackage. We will walk through how to:
+
+- Estimate the body mass of an organism using different methods, such as `volumetric()` function.
+
+- Calculate body length based on anatomical measurements.
+
+- Predict running speed based on leg length and body mass.
+
+Each example is designed to give you a practical understanding of how to use the functions effectively with fossil data. Let's dive in!
+
+### Estimating Body Mass
+
+The `volumetric()` function allows you to estimate the body mass of an organism based on its femur measurements. Here is a quick example:
+
+```{r example}
+# Example data
+reference_weight <- 8800   # Weight of the reference organism in kilograms
+reference_femur <- 136.5   # Femur length of the reference organism in centimeters
+estimated_femur <- 140     # Femur length of the organism to estimate in centimeters
+
+# Estimate body mass
+mass <- volumetric(reference_weight, reference_femur, estimated_femur)
+print(mass)
+```
+
+
+
+

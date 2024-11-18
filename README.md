@@ -6,7 +6,13 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of PaleoPackage is to …
+The goal of `PaleoPackage` is to provide a suite of tools for estimating
+various physical and ecological parameters of extinct animals based on
+anatomical measurements. These parameters include body mass, length,
+speed, and other derived metrics that are crucial for reconstructing the
+biology and behavior of extinct organisms. The package leverages
+volumetric and scaling formulas, as well as principles of biomechanics,
+to offer robust methods for analyzing fossil data.
 
 ## Installation
 
@@ -18,27 +24,26 @@ You can install the development version of PaleoPackage from
 pak::pak("Juan-Ignacio-Castillo/PaleoPackage")
 ```
 
+## Functions
+
+Here are some of the main functions provided by `PaleoPackage`:
+
+\-**`volumetric()`**: Estimates the body mass of an organism based on
+femur measurements using volumetric scaling formulas.
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to solve common problems
+using `PaleoPackage`:
 
 ``` r
 library(PaleoPackage)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+# Calculate the estimated body mass
+volumetric(reference_weight = 8800, reference_femur = 136.5, estimated_femur = 143)
+#> [1] 10117.96
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`

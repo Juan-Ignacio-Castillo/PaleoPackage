@@ -25,8 +25,8 @@
 #' @author
 #' Juan Ignacio Castillo
 #'
-#' @example
-#' volumetric(8800, 136.5, 140)
+#' @examples
+#' volumetric(8800, 136.5, 143)
 #'
 #' @export
 volumetric <- function(reference_weight, reference_femur, estimated_femur) {

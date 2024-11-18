@@ -29,6 +29,10 @@ Ensure that all measurements use consistent units (e.g., kilograms and centimete
 \note{
 This function is designed for academic use and paleontological applications.
 }
+\examples{
+volumetric(8800, 136.5, 143)
+
+}
 \references{
 Hurlburt, G. R. (1999). "Comparison of Body Mass Estimation Techniques for Dinosaurs."
 Journal of Vertebrate Paleontology, 19(4): 679-685.
