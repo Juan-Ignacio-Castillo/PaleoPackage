@@ -50,6 +50,18 @@ mass <- volumetric(reference_weight, reference_femur, estimated_femur)
 print(mass)
 ```
 
+### Calculating the Cursoriality for Theropods 
+
+The `cursoriality_theropod()` function calculates the optimal cadence (steps per second) and stride ratio for theropods based on their body mass. These parameters help assess the locomotor adaptations and cursorial potential of theropods across various weight ranges. Here's an example:
+
+```{r}
+# Example data
+weight_kg <- 5000  # Body mass of the theropod in kilograms
+
+# Calculate optimal cursorial parameters
+cursorial_params <- cursoriality_theropod(weight_kg)
+print(cursorial_params)
+```
 
 
 

@@ -28,8 +28,14 @@ pak::pak("Juan-Ignacio-Castillo/PaleoPackage")
 
 Here are some of the main functions provided by `PaleoPackage`:
 
-\-**`volumetric()`**: Estimates the body mass of an organism based on
+**`volumetric()`:** Estimates the body mass of an organism based on
 femur measurements using volumetric scaling formulas.
+
+**`cursoriality_theropod()`:** Calculates the optimal cadence (steps per
+second) and stride ratio for theropods based on their body mass. This
+function classifies theropods into weight ranges and assigns
+corresponding biomechanical parameters, aiding in the analysis of
+locomotor adaptations and cursoriality.
 
 ## Example
 
@@ -46,12 +52,12 @@ volumetric(reference_weight = 8800, reference_femur = 136.5, estimated_femur = 1
 #> [1] 10117.96
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+# Calculate the optimal cadance and stride ratio for theropods
+cursoriality_theropod(5000)
+#> $Optimal_cadence
+#> [1] 2
+#> 
+#> $Optimal_stride_ratio
+#> [1] 1.8
+```
