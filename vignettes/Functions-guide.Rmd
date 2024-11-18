@@ -31,7 +31,7 @@ In this guide, we describe how to use each main function of the package, includi
 
 Below is a quick demostration of some of the core functionalities of PaleoPackage. We will walk through how to:
 
-- Estimate the body mass of an organism using different methods, such as `volumetric()` function.
+- Estimate the body mass of an organism using different methods, such as `allometric_mass()` function.
 
 - Calculate body length based on anatomical measurements.
 
@@ -54,19 +54,32 @@ mass <- allometric_mass(reference_weight, reference_femur, estimated_femur)
 print(mass)
 ```
 
-### Calculating the Cursoriality for Theropods 
+### Calculating the Cursoriality for Bipedal Animals
 
-The `cursoriality_theropod()` function calculates the **adjusted cadence** (steps per second) and **adjusted stride ratio** for theropods based on their **body mass** and **leg length ratio**. These parameters help assess the locomotor adaptations and cursorial potential of theropods across various weight ranges and anatomical proportions. Here's an example:
+The `bipedal_cursoriality()` function calculates the **adjusted cadence** (steps per second) and **adjusted stride ratio** for bipedal aniamls based on their **body mass** and **leg length ratio**. These parameters help assess the locomotor adaptations and cursorial potential of bipedal animals across various weight ranges and anatomical proportions. Here's an example:
 
 ```{r}
 # Example data
-weight_kg <- 500          # Body mass of the theropod in kilograms
+weight_kg <- 500          # Body mass of the animal in kilograms
 leg_ratio <- 1.5          # Ratio of (Tibia + Metatarsal III) / Femur
 
 # Calculate adjusted cursorial parameters
-cursorial_params <- cursoriality_theropod(weight_kg, leg_ratio)
+cursorial_params <- bipedal_cursoriality(weight_kg, leg_ratio)
 print(cursorial_params)
 ```
 
+### Calculating the Velocity for Bipedal Animals
 
+The `bipedal_velocity()` function calculates the **velocity** (in kilometers per hour) of bipedal animals based on their **leg length**, **cadence**, and **stride ratio**. This function is particularly useful for estimating the locomotor capabilities of theropods and other bipedal organisms in paleontological research.
+
+```{r}
+# Example data
+leg_length_mm <- 3167         # Length of the leg in millimeters (Femur + Tibia + Metatarsal III)
+cadence <- 1.395             # Cadence of the animal in steps per second (Hz)
+stride_ratio <- 1.424        # Stride ratio: proportion between stride length and leg length
+
+# Calculate velocity
+velocity_kmh <- bipedal_velocity(leg_length_mm, cadence, stride_ratio)
+print(velocity_kmh)
+```
 

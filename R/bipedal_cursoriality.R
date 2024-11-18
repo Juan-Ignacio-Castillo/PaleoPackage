@@ -1,8 +1,8 @@
-#' Calculate Cursoriality Parameters for Theropods
+#' Calculate Cursoriality Parameters for Bipedal Animals
 #'
-#' This function calculates the optimal cadence and stride ratio for theropods based on their body mass and leg length ratio.
+#' This function calculates the optimal cadence and stride ratio for bipedal animals based on their body mass and leg length ratio.
 #'
-#' @param weight_kg Numeric. The body mass of the theropod in kilograms.
+#' @param weight_kg Numeric. The body mass of the animal in kilograms.
 #' @param leg_ratio Numeric. The ratio of (Tibia + Metatarsal III) / Femur.
 #'
 #' @return A list with two elements:
@@ -12,21 +12,18 @@
 #' }
 #'
 #' @details
-#' The function calculates cursoriality parameters for theropods by considering both their body mass
+#' The function calculates cursoriality parameters for bipedal animals by considering both their body mass
 #' and leg length proportions. It assigns optimal cadence and stride ratio values based on the weight ranges
-#' of the theropod, which are further adjusted by the ratio of tibia + metatarsal III to femur length.
+#' of the animal, which are further adjusted by the ratio of tibia + metatarsal III to femur length.
 #'
 #' The cadence (steps per second) and stride ratio (dimensionless value representing the relationship
 #' between stride length and body proportions) are initially determined from the body mass. These values
 #' are then adjusted using a biomechanical scaling factor based on the leg length ratio to refine the estimates.
 #'
-#' For theropods heavier than 10,000 kg, the function assumes minimal cursoriality with cadence and stride
+#' For animals heavier than 10,000 kg, the function assumes minimal cursoriality with cadence and stride
 #' ratio values starting at 1. The input leg length ratio must be between 0.9 and 2.8 to ensure accurate
 #' adjustments. Additionally, the total leg length (femur + tibia + metatarsal III) in meters can be used
 #' in subsequent calculations for speed estimation.
-#'
-#' This function is designed for paleontological research and educational purposes. The values it provides
-#' are estimates based on general models and may not fully represent specific species.
 #'
 #' @note
 #' This function is designed for paleontological research and educational purposes. The values it provides are estimates
@@ -41,10 +38,10 @@
 #' Juan Ignacio Castillo
 #'
 #' @examples
-#' cursoriality_theropod(500, 1.5)
+#' bipedal_cursoriality(500, 1.5)
 #'
 #' @export
-cursoriality_theropod <- function(weight_kg, leg_ratio) {
+bipedal_cursoriality <- function(weight_kg, leg_ratio) {
   # Validar entradas
   if (weight_kg < 0) {
     stop("Weight must be a positive value.")

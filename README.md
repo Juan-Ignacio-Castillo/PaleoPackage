@@ -3,6 +3,8 @@
 
 # PaleoPackage
 
+<img src="man/figures/Package Logo.png" alt="PaleoPackage" align="right" style="float: right; margin-right: -100px; margin-left: 0px;" width="300"/>
+
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -31,11 +33,17 @@ Here are some of the main functions provided by `PaleoPackage`:
 **`allometric_mass()`:** Estimates the body mass of an organism based on
 femur measurements using allometric scaling formulas.
 
-**`cursoriality_theropod()`:** Calculates the adjusted cadence (steps
-per second) and adjusted stride ratio for theropods based on their body
-mass and leg length ratio. This function helps analyze locomotor
+**`bipedal_cursoriality()`:** Calculates the adjusted cadence (steps per
+second) and adjusted stride ratio for bipedal aniamls based on their
+body mass and leg length ratio. This function helps analyze locomotor
 adaptations and cursorial potential by combining weight-based parameters
 with anatomical adjustments.
+
+**`bipedal_velocity()`:** Estimates the velocity of bipedal animals in
+kilometers per hour (km/h) based on their leg length, cadence, and
+stride ratio. The function calculates the speed using a biomechanical
+formula that accounts for leg dimensions in millimeters, step cadence
+(Hz), and stride length proportions.
 
 ## Example
 
@@ -53,11 +61,17 @@ allometric_mass(reference_weight = 8800, reference_femur = 136.5, estimated_femu
 ```
 
 ``` r
-# Calculate the optimal cadance and stride ratio for theropods
-cursoriality_theropod(weight_kg = 500, leg_ratio = 1.5)
+# Calculate the optimal cadance and stride ratio for bipedal animals
+bipedal_cursoriality(weight_kg = 500, leg_ratio = 1.5)
 #> $Adjusted_Cadence
 #> [1] 3.325
 #> 
 #> $Adjusted_Stride_Ratio
 #> [1] 2.184
+```
+
+``` r
+# Calculate the velocity for bipedal animals
+bipedal_velocity(leg_length_mm = 3167, cadence = 1.395, stride_ratio = 1.424)
+#> [1] 22.64826
 ```
