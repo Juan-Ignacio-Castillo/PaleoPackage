@@ -52,14 +52,15 @@ print(mass)
 
 ### Calculating the Cursoriality for Theropods 
 
-The `cursoriality_theropod()` function calculates the optimal cadence (steps per second) and stride ratio for theropods based on their body mass. These parameters help assess the locomotor adaptations and cursorial potential of theropods across various weight ranges. Here's an example:
+The `cursoriality_theropod()` function calculates the **adjusted cadence** (steps per second) and **adjusted stride ratio** for theropods based on their **body mass** and **leg length ratio**. These parameters help assess the locomotor adaptations and cursorial potential of theropods across various weight ranges and anatomical proportions. Here's an example:
 
 ```{r}
 # Example data
-weight_kg <- 5000  # Body mass of the theropod in kilograms
+weight_kg <- 500          # Body mass of the theropod in kilograms
+leg_ratio <- 1.5          # Ratio of (Tibia + Metatarsal III) / Femur
 
-# Calculate optimal cursorial parameters
-cursorial_params <- cursoriality_theropod(weight_kg)
+# Calculate adjusted cursorial parameters
+cursorial_params <- cursoriality_theropod(weight_kg, leg_ratio)
 print(cursorial_params)
 ```
 

@@ -35,7 +35,7 @@ Here are some of the main functions provided by `PaleoPackage`:
 
 **`volumetric()`:** Estimates the body mass of an organism based on femur measurements using volumetric scaling formulas.
 
-**`cursoriality_theropod()`:** Calculates the optimal cadence (steps per second) and stride ratio for theropods based on their body mass. This function classifies theropods into weight ranges and assigns corresponding biomechanical parameters, aiding in the analysis of locomotor adaptations and cursoriality.
+**`cursoriality_theropod()`:** Calculates the adjusted cadence (steps per second) and adjusted stride ratio for theropods based on their body mass and leg length ratio. This function helps analyze locomotor adaptations and cursorial potential by combining weight-based parameters with anatomical adjustments.
 
 ## Example
 
@@ -45,11 +45,19 @@ This is a basic example which shows you how to solve common problems using `Pale
 library(PaleoPackage)
 ```
 
+```{r setup, include=FALSE}
+devtools::load_all(".")
+```
+
+
 ```{r}
 # Calculate the estimated body mass
 volumetric(reference_weight = 8800, reference_femur = 136.5, estimated_femur = 143)
 ```
+
 ```{r}
 # Calculate the optimal cadance and stride ratio for theropods
-cursoriality_theropod(5000)
+cursoriality_theropod(weight_kg = 500, leg_ratio = 1.5)
 ```
+
+

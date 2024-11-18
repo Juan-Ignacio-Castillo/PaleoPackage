@@ -4,36 +4,46 @@
 \alias{cursoriality_theropod}
 \title{Calculate Cursoriality Parameters for Theropods}
 \usage{
-cursoriality_theropod(weight_kg)
+cursoriality_theropod(weight_kg, leg_ratio)
 }
 \arguments{
 \item{weight_kg}{Numeric. The body mass of the theropod in kilograms.}
+
+\item{leg_ratio}{Numeric. The ratio of (Tibia + Metatarsal III) / Femur.}
 }
 \value{
 A list with two elements:
 \describe{
-\item{Optimal_cadence}{Numeric. The optimal cadence for the given body mass (steps per second).}
-\item{Optimal_stride_ratio}{Numeric. The optimal stride ratio for the given body mass.}
+\item{Adjusted_Cadence}{Numeric. The cadence adjusted based on both body mass and leg length ratio (steps per second).}
+\item{Adjusted_Stride_Ratio}{Numeric. The stride ratio adjusted based on both body mass and leg length ratio.}
 }
 }
 \description{
-This function calculates the optimal cadence and stride ratio for theropods based on their body mass.
+This function calculates the optimal cadence and stride ratio for theropods based on their body mass and leg length ratio.
 }
 \details{
-The function categorizes theropods into weight ranges and assigns optimal cadence and stride ratio values based on these ranges.
-These values are derived from biomechanical principles and empirical studies of extant cursorial animals.
+The function calculates cursoriality parameters for theropods by considering both their body mass
+and leg length proportions. It assigns optimal cadence and stride ratio values based on the weight ranges
+of the theropod, which are further adjusted by the ratio of tibia + metatarsal III to femur length.
 
-The cadence represents the number of steps taken per second, while the stride ratio is a dimensionless value
-that represents the relationship between stride length and body proportions. For theropods heavier than 10,000 kg,
-the function assumes minimal cursoriality with cadence and stride ratio values of 1.
-It is crucial to provide the body mass in kilograms to ensure accurate parameter calculations.
+The cadence (steps per second) and stride ratio (dimensionless value representing the relationship
+between stride length and body proportions) are initially determined from the body mass. These values
+are then adjusted using a biomechanical scaling factor based on the leg length ratio to refine the estimates.
+
+For theropods heavier than 10,000 kg, the function assumes minimal cursoriality with cadence and stride
+ratio values starting at 1. The input leg length ratio must be between 0.9 and 2.8 to ensure accurate
+adjustments. Additionally, the total leg length (femur + tibia + metatarsal III) in meters can be used
+in subsequent calculations for speed estimation.
+
+This function is designed for paleontological research and educational purposes. The values it provides
+are estimates based on general models and may not fully represent specific species.
 }
 \note{
 This function is designed for paleontological research and educational purposes. The values it provides are estimates
 based on general models and may not fully represent specific species.
 }
 \examples{
-cursoriality_theropod(500)
+cursoriality_theropod(500, 1.5)
 
 }
 \references{
