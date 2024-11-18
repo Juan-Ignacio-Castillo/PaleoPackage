@@ -30,6 +30,10 @@
 #'
 #' @export
 allometric_mass <- function(reference_weight, reference_femur, estimated_femur) {
+  if (reference_weight <= 0) stop("reference_weight must be positive")
+  if (reference_femur <= 0) stop("reference_femur must be positive")
+  if (estimated_femur <= 0) stop("estimated_femur must be positive")
+
   mass <- reference_weight * (estimated_femur / reference_femur)^3
   return(mass)
 }
