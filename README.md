@@ -28,8 +28,8 @@ pak::pak("Juan-Ignacio-Castillo/PaleoPackage")
 
 Here are some of the main functions provided by `PaleoPackage`:
 
-**`volumetric()`:** Estimates the body mass of an organism based on
-femur measurements using volumetric scaling formulas.
+**`allometric_mass()`:** Estimates the body mass of an organism based on
+femur measurements using allometric scaling formulas.
 
 **`cursoriality_theropod()`:** Calculates the adjusted cadence (steps
 per second) and adjusted stride ratio for theropods based on their body
@@ -48,7 +48,7 @@ library(PaleoPackage)
 
 ``` r
 # Calculate the estimated body mass
-volumetric(reference_weight = 8800, reference_femur = 136.5, estimated_femur = 143)
+allometric_mass(reference_weight = 8800, reference_femur = 136.5, estimated_femur = 143)
 #> [1] 10117.96
 ```
 

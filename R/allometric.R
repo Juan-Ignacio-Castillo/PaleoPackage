@@ -1,6 +1,6 @@
-#' Calculate Body Mass Using a Volumetric Formula
+#' Calculate Body Mass Using an Allometric Formula
 #'
-#' This function estimates the body mass of an organism based on its femur length using a volumetric formula.
+#' This function estimates the body mass of an organism based on its femur length using an Allometric formula.
 #'
 #' @param reference_weight Numeric. The known weight of the reference organism (e.g., in kilograms).
 #' @param reference_femur Numeric. The femur length of the reference organism (e.g., in centimeters).
@@ -26,10 +26,10 @@
 #' Juan Ignacio Castillo
 #'
 #' @examples
-#' volumetric(8800, 136.5, 143)
+#' allometric_mass(8800, 136.5, 143)
 #'
 #' @export
-volumetric <- function(reference_weight, reference_femur, estimated_femur) {
+allometric_mass <- function(reference_weight, reference_femur, estimated_femur) {
   mass <- reference_weight * (estimated_femur / reference_femur)^3
   return(mass)
 }
