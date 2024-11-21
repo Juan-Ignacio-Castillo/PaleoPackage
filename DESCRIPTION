@@ -18,5 +18,6 @@ Suggests:
     devtools
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-Imports: 
-
+Depends: 
+    R (>= 2.10)
+LazyData: true
